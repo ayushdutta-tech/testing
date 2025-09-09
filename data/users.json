@@ -1,0 +1,197 @@
+[ {
+  "username" : "jim",
+  "password" : "$2a$10$NLr1obx7dQOthGuLWuC/Ge8k1pBk0ezCjGjE/MFjMwmUY5FEbzNBq",
+  "enabled" : true,
+  "accountNonLocked" : true,
+  "accountNonExpired" : true,
+  "credentialsNonExpired" : true
+}, {
+  "username" : "josh",
+  "password" : "$2a$10$w.GR6SKTTZr2yEibvz4BiOyY6QSiwLcVSvjGJsHQiFG2EMUL7EN8G",
+  "enabled" : true,
+  "accountNonLocked" : true,
+  "accountNonExpired" : true,
+  "credentialsNonExpired" : true
+}, {
+  "username" : "joe",
+  "password" : "$2a$10$IN6jy8Udxmu5R.rhwTuO9eFwAyms2Rq2EZPFWaOmNjA/2iqb1ZIs2",
+  "enabled" : true,
+  "accountNonLocked" : true,
+  "accountNonExpired" : true,
+  "credentialsNonExpired" : true
+}, {
+  "username" : "jin",
+  "password" : "$2a$10$Hi3FYUYYswhaNHZvr5ljh.UZ8GvVf1NAq8sVmJG0OrCBV3j36D0fq",
+  "enabled" : true,
+  "accountNonLocked" : true,
+  "accountNonExpired" : true,
+  "credentialsNonExpired" : true
+}, {
+  "username" : "Teju",
+  "password" : "$2a$10$lpsvdCy905R0o1RV7swpIeF9sJq2RE6JcraWf0O.awiXixHVAiSde",
+  "enabled" : true,
+  "accountNonLocked" : true,
+  "accountNonExpired" : true,
+  "credentialsNonExpired" : true
+}, {
+  "username" : "Tejaswini",
+  "password" : "$2a$10$6xcazUsrYZoaf6prQppQRO95eKW53R2yCLTNoUf96i4x0RHl3VR9y",
+  "enabled" : true,
+  "accountNonLocked" : true,
+  "accountNonExpired" : true,
+  "credentialsNonExpired" : true
+}, {
+  "username" : "Tejaswini A M",
+  "password" : "$2a$10$yCgRWn6ZAWhiY.4DjytTkeEE8eh5m5LxqhP/JllG/y/OsGqsnNXp2",
+  "enabled" : true,
+  "accountNonLocked" : true,
+  "accountNonExpired" : true,
+  "credentialsNonExpired" : true
+}, {
+  "username" : "Rahul",
+  "password" : "$2a$10$cI0fUu/qhhv9zVuf/cwaouy4Z4UilM1NZPtF6QDRAxq3A5tPLvGPq",
+  "enabled" : true,
+  "accountNonLocked" : true,
+  "accountNonExpired" : true,
+  "credentialsNonExpired" : true
+}, {
+  "username" : "Rahul R",
+  "password" : "$2a$10$KzKr98A244aRxi7fjjzDR.h/HmJ944tBBGRhE3ncacvidpe/P6NFO",
+  "enabled" : true,
+  "accountNonLocked" : true,
+  "accountNonExpired" : true,
+  "credentialsNonExpired" : true
+}, {
+  "username" : "Bhanu",
+  "password" : "$2a$10$8iazCxV1gLXXFtsaJuyT4eBxBldGdAJf4QJY3XE0nEHfVFGm0kvsW",
+  "enabled" : true,
+  "accountNonLocked" : true,
+  "accountNonExpired" : true,
+  "credentialsNonExpired" : true
+}, {
+  "username" : "Aryan",
+  "password" : "$2a$10$mfqUmu/Uhu2cxwjEdlSIE.xaFcjLVD9SJXyey.Q4VM.hcNj1EE26m",
+  "enabled" : true,
+  "accountNonLocked" : true,
+  "accountNonExpired" : true,
+  "credentialsNonExpired" : true
+}, {
+  "username" : "ABCDEF",
+  "password" : "$2a$10$suadNXs7kYbTO74cp6UjTOjk8Y/sv8d/efZpmr8PhM8Vuxs0bjMs6",
+  "enabled" : true,
+  "accountNonLocked" : true,
+  "accountNonExpired" : true,
+  "credentialsNonExpired" : true
+}, {
+  "username" : "mnbv",
+  "password" : "$2a$10$pH/bVlPU/PL0.CWqS3Ye2uZEaa6OVypdDkk4AWAPD8yJTCF/Mpmoa",
+  "enabled" : true,
+  "accountNonLocked" : true,
+  "accountNonExpired" : true,
+  "credentialsNonExpired" : true
+}, {
+  "username" : "Test@123",
+  "password" : "$2a$10$Ag1WczJQdaM3Jwkez0Vm9uqvjjzYXoQ60corkTe8zb5PBAyed6Q2q",
+  "enabled" : true,
+  "accountNonLocked" : true,
+  "accountNonExpired" : true,
+  "credentialsNonExpired" : true
+}, {
+  "username" : "Test@12",
+  "password" : "$2a$10$7wwL5xMGK00TBdxIdM/7EOQ4.auFyESboSzlAgOebOEt95SlAAIZi",
+  "enabled" : true,
+  "accountNonLocked" : true,
+  "accountNonExpired" : true,
+  "credentialsNonExpired" : true
+}, {
+  "username" : "Test@1234",
+  "password" : "$2a$10$c.gxAFMD/V10LECCr7loVOYLgZBobCioqCAXvJ2XdnEq.3CMjUooO",
+  "enabled" : true,
+  "accountNonLocked" : true,
+  "accountNonExpired" : true,
+  "credentialsNonExpired" : true
+}, {
+  "username" : "Dhruv123",
+  "password" : "$2a$10$UHmDY.gMlzOaksuc8ySr9.4I//hDI5ewwghmude.P.fdy1QROkGFS",
+  "enabled" : true,
+  "accountNonLocked" : true,
+  "accountNonExpired" : true,
+  "credentialsNonExpired" : true
+}, {
+  "username" : "Dhruv1234",
+  "password" : "$2a$10$bg6zrrKJ2hPTXHu17iT21uNTSgS09D2XjzgSpVmRTWVs117X96P2q",
+  "enabled" : true,
+  "accountNonLocked" : true,
+  "accountNonExpired" : true,
+  "credentialsNonExpired" : true
+}, {
+  "username" : "Dhruv123456",
+  "password" : "$2a$10$G6QtdWJtTP2yaKKW557TBOtlMRG89wvYNysdwlPGIiZ5LQ/SdARr2",
+  "enabled" : true,
+  "accountNonLocked" : true,
+  "accountNonExpired" : true,
+  "credentialsNonExpired" : true
+}, {
+  "username" : "Dhruv1234567",
+  "password" : "$2a$10$eJ2dToU79GXKCiVKrJW8Z.dnA3MqlFchux32Sxl1lk4fgHVgkfmB2",
+  "enabled" : true,
+  "accountNonLocked" : true,
+  "accountNonExpired" : true,
+  "credentialsNonExpired" : true
+}, {
+  "username" : "Dhruv12345678",
+  "password" : "$2a$10$WCj2O8f8kUg0Qu/e97TG1udCny0Bcx8n3jVSu7EauO5Rmfy/uSXwK",
+  "enabled" : true,
+  "accountNonLocked" : true,
+  "accountNonExpired" : true,
+  "credentialsNonExpired" : true
+}, {
+  "username" : "Dhruv123456788",
+  "password" : "$2a$10$oi63XAlYByitJslhpiD9UecLQNi8Pa7xgMcaLjClfF0mOndl8D34K",
+  "enabled" : true,
+  "accountNonLocked" : true,
+  "accountNonExpired" : true,
+  "credentialsNonExpired" : true
+}, {
+  "username" : "Dhruv12",
+  "password" : "$2a$10$XrE/qWa9DmjEGuLqV1cRoeOfwDsB.Qx3VXN63ihEYj1LAxxXKz3Cq",
+  "enabled" : true,
+  "accountNonLocked" : true,
+  "accountNonExpired" : true,
+  "credentialsNonExpired" : true
+}, {
+  "username" : "Dhruv1254",
+  "password" : "$2a$10$0ZjGLLxZ699D9D5DmQgOmeObB9iPwJEb9UY6KEMbuYIPJI0dh7.o6",
+  "enabled" : true,
+  "accountNonLocked" : true,
+  "accountNonExpired" : true,
+  "credentialsNonExpired" : true
+}, {
+  "username" : "Dhruv12545",
+  "password" : "$2a$10$Z/ZnL.t7mLJ5d19AHLdXoubGkMZeT.e2OvlCewBplbW4WbdXuCvRi",
+  "enabled" : true,
+  "accountNonLocked" : true,
+  "accountNonExpired" : true,
+  "credentialsNonExpired" : true
+}, {
+  "username" : "Dhruv125456",
+  "password" : "$2a$10$hW8ElxqBho80V3d.XF2YYOVeWJdFTc7u6vWftExPzEhhxf5fF6qK6",
+  "enabled" : true,
+  "accountNonLocked" : true,
+  "accountNonExpired" : true,
+  "credentialsNonExpired" : true
+}, {
+  "username" : "Kanan",
+  "password" : "$2a$10$7fwvqbiix3nmkUxzf9hegOECk716DKh3Bq3mJhlme1q7hMEgRq9ju",
+  "enabled" : true,
+  "accountNonLocked" : true,
+  "accountNonExpired" : true,
+  "credentialsNonExpired" : true
+}, {
+  "username" : "Kanan Bedi",
+  "password" : "$2a$10$S0Yu9CeQpa1nI2CgFqeIs.9nfvgZyc/XI9GmxgUCcSPBSRqb..gOy",
+  "enabled" : true,
+  "accountNonLocked" : true,
+  "accountNonExpired" : true,
+  "credentialsNonExpired" : true
+} ]

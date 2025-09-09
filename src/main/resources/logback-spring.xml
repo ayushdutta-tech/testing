@@ -1,0 +1,30 @@
+<configuration>
+    <!-- Property for log directory -->
+    <property name="LOG_DIR" value="logs"/>
+
+    <!-- Console appender -->
+    <appender name="Console" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n%ex{full}</pattern>
+        </encoder>
+    </appender>
+
+    <!-- Daily rolling file appender (no static app.log, only daily logs) -->
+    <appender name="DailyFile" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!-- Each day has its own log file -->
+            <fileNamePattern>${LOG_DIR}/app.%d{yyyy-MM-dd}.log</fileNamePattern>
+            <maxHistory>30</maxHistory> <!-- Keep logs for 30 days -->
+        </rollingPolicy>
+
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n%ex{full}</pattern>
+        </encoder>
+    </appender>
+
+    <!-- Root logger -->
+    <root level="DEBUG">
+        <appender-ref ref="Console"/>
+        <appender-ref ref="DailyFile"/>
+    </root>
+</configuration>
