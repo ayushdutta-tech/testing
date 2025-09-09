@@ -13,21 +13,15 @@ import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-/**
- * Tests for LoginAuditService (uses a temporary file path).
- */
 class LoginAuditServiceTest {
 
-    @TempDir
-    Path tempDir;
-
+    @TempDir Path tempDir;
     private LoginAuditService auditService;
     private File auditFile;
 
     @BeforeEach
     void setUp() {
         auditFile = tempDir.resolve("user.json").toFile();
-        // inject temp file path via constructor
         auditService = new LoginAuditService(auditFile.getAbsolutePath());
     }
 
@@ -44,13 +38,13 @@ class LoginAuditServiceTest {
         auditService.saveLoginLog(log1);
         auditService.saveLoginLog(log2);
 
-        assertTrue(auditFile.exists(), "Audit file should be created");
+        assertTrue(auditFile.exists());
 
         ObjectMapper mapper = new ObjectMapper();
         List<Map<String, Object>> logs =
                 mapper.readValue(auditFile, mapper.getTypeFactory().constructCollectionType(List.class, Map.class));
 
-        assertEquals(2, logs.size(), "There should be two logs stored");
+        assertEquals(2, logs.size());
         assertEquals("alice", logs.get(0).get("username"));
         assertEquals("bob", logs.get(1).get("username"));
     }
@@ -63,6 +57,6 @@ class LoginAuditServiceTest {
 
         auditService.saveLoginLog(log);
 
-        assertTrue(auditFile.exists(), "Audit file should be created");
+        assertTrue(auditFile.exists());
     }
 }

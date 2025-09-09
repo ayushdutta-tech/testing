@@ -7,17 +7,10 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
 import java.security.Principal;
 
-import static org.junit.jupiter.api.Assertions.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
-/**
- * Tests for HelloController.
- *
- * The controller currently calls principal.getName() without null-check,
- * so an unauthenticated request will throw a NullPointerException during dispatch.
- * This test verifies both the happy path and the exception case.
- */
+
 class HelloControllerTest {
 
     private MockMvc mockMvc;
@@ -38,18 +31,9 @@ class HelloControllerTest {
     }
 
     @Test
-    void testHelloWithoutPrincipal_throwsServletExceptionWithNpeCause() {
-        Exception thrown = assertThrows(Exception.class, () -> {
-            mockMvc.perform(get("/api/hello")).andReturn();
-        });
-
-        // unwrap root cause
-        Throwable cause = thrown;
-        while (cause.getCause() != null) {
-            cause = cause.getCause();
-        }
-
-        String msg = "Expected root cause to be NullPointerException but was: " + cause.getClass().getName();
-        assertTrue(cause instanceof NullPointerException, msg);
+    void testHelloWithoutPrincipal_returnsAnonymous() throws Exception {
+        mockMvc.perform(get("/api/hello"))
+                .andExpect(status().isOk())
+                .andExpect(content().string("Hello, anonymous! This is a protected resource."));
     }
 }

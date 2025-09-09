@@ -17,23 +17,17 @@ import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.*;
 import static org.mockito.Mockito.*;
 
-/**
- * Unit tests for RefreshTokenService.
- */
 @ExtendWith(MockitoExtension.class)
 class RefreshTokenServiceTest {
 
-    @Mock
-    RefreshTokenRepository refreshTokenRepository;
-
-    @Mock
-    UserRepository userRepository;
+    @Mock RefreshTokenRepository refreshTokenRepository;
+    @Mock UserRepository userRepository;
 
     RefreshTokenService refreshTokenService;
 
     @BeforeEach
     void init() {
-        // create service with mocked dependencies (no default constructor required)
+        // short expiry used for tests (ms)
         refreshTokenService = new RefreshTokenService(refreshTokenRepository, userRepository, 24 * 60 * 60 * 1000L);
     }
 
@@ -41,8 +35,6 @@ class RefreshTokenServiceTest {
     void createRefreshToken_shouldReturnToken_whenUserExists() {
         String username = "u1";
         when(userRepository.findByUsername(eq(username))).thenReturn(Optional.of(new User()));
-
-        // make save(...) return the saved entity
         when(refreshTokenRepository.save(any(RefreshToken.class))).thenAnswer(inv -> inv.getArgument(0));
 
         RefreshToken token = refreshTokenService.createRefreshToken(username);
@@ -52,6 +44,15 @@ class RefreshTokenServiceTest {
         assertNotNull(token.getToken());
         assertTrue(token.getExpiryDate().isAfter(Instant.now()));
         verify(refreshTokenRepository).save(any(RefreshToken.class));
+    }
+
+    @Test
+    void createRefreshToken_shouldThrow_whenUserNotFound() {
+        when(userRepository.findByUsername(eq("ghost"))).thenReturn(Optional.empty());
+
+        RuntimeException ex = assertThrows(RuntimeException.class,
+                () -> refreshTokenService.createRefreshToken("ghost"));
+        assertTrue(ex.getMessage().toLowerCase().contains("user not found"));
     }
 
     @Test
@@ -68,7 +69,7 @@ class RefreshTokenServiceTest {
         assertEquals("t1", found.get().getToken());
 
         RefreshToken verified = refreshTokenService.verifyExpiration(rt);
-        assertNotNull(verified);
+        assertSame(rt, verified);
     }
 
     @Test
@@ -78,7 +79,6 @@ class RefreshTokenServiceTest {
         rt.setUsername("u");
         rt.setExpiryDate(Instant.now().minusSeconds(60));
 
-        // verify that deleteByToken gets called when token expired
         doNothing().when(refreshTokenRepository).deleteByToken(eq("expired"));
 
         RuntimeException ex = assertThrows(RuntimeException.class, () -> refreshTokenService.verifyExpiration(rt));

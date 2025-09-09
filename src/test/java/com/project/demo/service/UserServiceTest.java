@@ -23,33 +23,31 @@ import static org.mockito.Mockito.*;
 @ExtendWith(MockitoExtension.class)
 class UserServiceTest {
 
-    @Mock
-    private UserRepository userRepository;
-
-    @Mock
-    private PasswordEncoder passwordEncoder;
-
-    @InjectMocks
-    private UserService userService;
+    @Mock private UserRepository userRepository;
+    @Mock private PasswordEncoder passwordEncoder;
+    @InjectMocks private UserService userService;
 
     @BeforeEach
     void setUp() {
-        // mark lenient so unused stubs in some tests do NOT trigger UnnecessaryStubbingException
         Mockito.lenient().when(passwordEncoder.encode(any())).thenAnswer(inv -> "ENC(" + inv.getArgument(0) + ")");
     }
 
     @Test
-    void register_shouldSaveUser() {
+    void register_shouldSaveUser_andUseEncoder() {
         User user = new User();
         user.setUsername("alice");
         user.setPassword("plain");
 
-        when(userRepository.save(any(User.class))).thenAnswer(inv -> inv.getArgument(0));
+        when(userRepository.save(any(User.class))).thenAnswer(inv -> {
+            User u = inv.getArgument(0);
+            u.setId(10L);
+            return u;
+        });
 
         String result = userService.register(user);
 
-        // service implementation returns "User registered successfully!" (note the exclamation)
         assertEquals("User registered successfully!", result);
+        verify(passwordEncoder).encode("plain");
         verify(userRepository).save(any(User.class));
     }
 
@@ -61,17 +59,16 @@ class UserServiceTest {
 
         when(userRepository.findByUsername("bob")).thenReturn(Optional.of(user));
 
-        User found = (User) userService.loadUserByUsername("bob");
+        var found = userService.loadUserByUsername("bob");
 
         assertNotNull(found);
-        assertEquals("bob", found.getUsername());
+        assertEquals("bob", ((User)found).getUsername());
     }
 
     @Test
     void loadUserByUsername_shouldThrow_whenNotFound() {
         when(userRepository.findByUsername("ghost")).thenReturn(Optional.empty());
 
-        assertThrows(RuntimeException.class,
-                () -> userService.loadUserByUsername("ghost"));
+        assertThrows(RuntimeException.class, () -> userService.loadUserByUsername("ghost"));
     }
 }
